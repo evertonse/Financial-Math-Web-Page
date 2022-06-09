@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./styles/nav.css">
+    <link rel="stylesheet" href="./styles/questions.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="./src/toggle_tabs.js" defer></script>
+    <!-- Create Question custom, para caso queiram utilizar a função pra criar uma nova questão não listada -->
+    <script src="./src/create-question-custom.js" defer></script>
+    <!-- A partir daqui vem o conjunto de soluções -->
+    <!-- Porcentagem -->
+    <script src="Porcentagem.js" defer></script>
+    <!-- JurosSimples -->
+    <script src="JurosSimples.js" defer></script>
+    <!-- JurosComposto -->
+    <script src="JurosComposto.js" defer></script>
+    <!-- Investimento -->
+    <script src="Investimento.js" defer></script>
+    <!-- Solution é onde toda a logica para acessar inputs na sua solução está -->
+    <script src="./src/solution.js" defer></script>
+
+    <title>Finanças</title>
+
+</head>
+
+<body>
+    <header>
+        <nav class="nav-bar">
+            <div id="disciplina"><ion-icon  id="disciplina-ico" name="code-slash-outline"></ion-icon>PF</div>
+            <ul class="tabs">
+                <input  data-for="#percent"type="radio" id="percent-tab" name="tabs" checked="checked">
+                <label  for="percent-tab">
+                    <li class="tab" ><ion-icon name="stats-chart-outline"></ion-icon>Porcentagem</li>
+                </label>
+
+                <input data-for="#juros"type="radio" id="juros-tab" name="tabs">
+                <label  for="juros-tab">
+                    <li class="tab" ><ion-icon name="pencil-outline"></ion-icon>Juros Simples</li>
+                </label>
+
+                <input  data-for="#dinheiro"type="radio" id="dinhero-tab" name="tabs">
+                <label  for="dinhero-tab">
+
+                    <li class="tab" ><ion-icon id="dinheiro-ico" name="cash-outline"></ion-icon>Juros Composto</li>
+                </label>
+
+                <input data-for="#investimento" type="radio" id="retorno-tab" name="tabs">
+                <label  for="retorno-tab">
+                    <li class="tab" ><ion-icon   name="trending-up-outline"></ion-icon>Investimento</li>
+                </label>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="presentation"></div>
+        <!-- cada pergunta é uma do pergunta-container -->
+            <div data-content id="percent" class="content-grid">
+                <!-- PERCENTUAL  #####TODAS AS PERGUNTAS SOBRE PERCENTUAL AQUI-->
+                <div class="pergunta-container">
+                    <div id="percentual-valor"class="pergunta">
+                        <h4 class="titulo">Percentual de um valor:</h6>
+                        <div class="inputs-container">
+                            <input placeholder="Quanto é" type="number">
+                            <input placeholder="de"type="number">
+                        </div>
+                        <div class="resposta">Resposta:  <div class="r"></div></div>
+                    </div>
+                </div>
+                <div class="pergunta-container">
+                    <div id="percentual-aumento"class="pergunta">
+                        <h4 class="titulo">Aumento Percentual:</h6>
+                        <div class="inputs-container">
+                            <input placeholder="Valor de" type="number">
+                            <input placeholder="com aumento de"type="number">
+                        </div>
+                        <div class="resposta">Resposta:  <div class="r"></div></div>
+                    </div>
+                </div>
+                <div class="pergunta-container">
+                    <div id="percentual-desconto" class="pergunta">
+                        <h4 class="titulo">Desconto Percentual:</h6>    
+                        <div class="inputs-container">
+                            <input placeholder="Quanto é" type="number">
+                            <input placeholder="com desconto de "type="number">
+                        </div>
+                        <div class="resposta">Resposta:  <div class="r"></div></div>
+                    </div>
+                </div>
+                <div class="pergunta-container">
+                    <div id="percentual-margem"class="pergunta">
+                        <h4 class="titulo">Margem de Venda:</h4>
+                        <div class="inputs-container">
+                            <input placeholder="Custo do produto " type="number">
+                            <input placeholder="com margem de"type="number">
+                        </div>
+                        <div class="resposta">Será vendido por:  <div class="r"></div></div>
+                    </div>
+                </div>
+                <div class="pergunta-container">
+                    <div id="percentual-variação"class="pergunta">
+                        <h4 class="titulo">Variação Percentual:</h4>
+                        <div class="inputs-container">
+                            <input placeholder="Valor de" type="number">
+                            <input placeholder="foi para"type="number">
+                        </div>
+                        <div class="resposta">Teve uma mudança de:  <div class="r"></div></div>
+                    </div>
+                </div>
+                <div class="pergunta-container">
+                    <div id="percentual-relação"class="pergunta">
+                        <h4 class="titulo">Relação Percentual Entre Dois Valores:</h4>
+                        <div class="inputs-container">
+                            <input placeholder="O valor de" type="number">
+                            <input placeholder="é quanto por cento de"type="number">
+                        </div>
+                        <div class="resposta">Teve uma mudança de:  <div class="r"></div></div>
+                    </div>
+                </div>
+            </div>
+            <!-- JUROS SIMPLES #####TODAS AS PERGUNTAS SOBRE JUROS  SIMPLES-->
+            <div data-content id="juros" class="content-grid">
+                <!-- ## -->
+                <div class="pergunta-container">
+                    <div id="juros-simples-futuro" class="pergunta">
+                        <h4 class="titulo">Valor Futuro (ou Montante): <small style="color: var(--card-color-question);">F = P.(1 + i.n)</small> </h4>
+                        <div class="inputs-container">
+                            <input placeholder="Valor presente" type="number">
+                            <input placeholder="Taxa de juros:" type="number">
+                            <input placeholder="Número de períodos:" type="number">
+                        </div>
+                        <div class="resposta">Valor Futuro: <div class="r"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ## -->
+                <!-- ## -->
+                <div class="pergunta-container">
+                    <div id="juros-simples-presente"class="pergunta">
+                        <h4 class="titulo">Valor Presente (ou Principal):<small style="color: var(--card-color-question);">P = F/(1 + i.n)</small></h4>
+                        <div class="inputs-container">
+                            <input placeholder="Valor futuro" type="number">
+                            <input placeholder="Taxa de juros:" type="number">
+                            <input placeholder="Número de períodos:" type="number">
+                        </div>
+                        <div class="resposta">Valor Presente: <div class="r"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ## -->
+                <!-- ## -->
+                <div class="pergunta-container">
+                    <div id="juros-simples-taxa" class="pergunta">
+                        <h4 class="titulo">Taxa de Juros:<small style="color: var(--card-color-question);">i = (F - P)/(P.n)</small></h4>
+                        <div class="inputs-container">
+                            <input placeholder="Valor presente" type="number">
+                            <input placeholder="Valor futuro:" type="number">
+                            <input placeholder="Número de períodos:" type="number">
+                        </div>
+                        <div class="resposta">Valor Presente: <div class="r"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ## -->
+                <div class="pergunta-container">
+                    <div id="juros-simples-periodos"class="pergunta">
+                        <h4 class="titulo">Número de Períodos:<small style="color: var(--card-color-question);">n = (F - P)/(P.i)</small></h4>
+                        <div class="inputs-container">
+                            <input placeholder="Valor presente" type="number">
+                            <input placeholder="Valor futuro:" type="number">
+                            <input placeholder="Taxa de juros:" type="number">
+                        </div>
+                        <div class="resposta">Número de Períodos: <div class="r"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ## -->
+
+            </div>
+            <!-- JUROS COMPOSTO #####TODAS AS PERGUNTAS SOBRE JUROS  COMPOSTO-->
+            <div data-content id="dinheiro" class="content-grid">
+                    <!-- ## -->
+                    <div class="pergunta-container">
+                        <div id="juros-composto-futuro"class="pergunta">
+                            <h4 class="titulo">Valor Futuro (ou Montante): <small style="color: var(--card-color-question);">F = P.(1 + i)<sup>n</sup></small> </h4>
+                            <div class="inputs-container">
+                                <input placeholder="Valor presente" type="number">
+                                <input placeholder="Taxa de juros:" type="number">
+                                <input placeholder="Número de períodos:" type="number">
+                            </div>
+                            <div class="resposta">Valor Futuro: <div class="r"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ## -->
+                    <!-- ## -->
+                    <div class="pergunta-container">
+                        <div id="juros-composto-presente"class="pergunta">
+                            <h4 class="titulo">Valor Presente (ou Principal):<small style="color: var(--card-color-question);">P = F/(1 + i)<sup>n</sup> </small></h4>
+                            <div class="inputs-container">
+                                <input placeholder="Valor futuro" type="number">
+                                <input placeholder="Taxa de juros:" type="number">
+                                <input placeholder="Número de períodos:" type="number">
+                            </div>
+                            <div class="resposta">Valor Presente: <div class="r"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ## -->
+                    <!-- ## -->
+                    <div class="pergunta-container">
+                        <div id="juros-composto-taxa"class="pergunta">
+                            <h4 class="titulo">Taxa de Juros:<small style="color: var(--card-color-question);">i = (F/P)<sup>1/n</sup> - 1</small>
+                            </h4>
+                            <div class="inputs-container">
+                                <input placeholder="Valor presente" type="number">
+                                <input placeholder="Valor futuro:" type="number">
+                                <input placeholder="Número de períodos:" type="number">
+                            </div>
+                            <div class="resposta">Valor Presente: <div class="r"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ## -->
+                    <div class="pergunta-container">
+                        <div id="juros-composto-periodos" class="pergunta">
+                            <h4 class="titulo">Número de Períodos:<small style="color: var(--card-color-question);">n = log(F/P)/log(1+i)</small></h4>
+                            <div class="inputs-container">
+                                <input placeholder="Valor presente" type="number">
+                                <input placeholder="Valor futuro:" type="number">
+                                <input placeholder="Taxa de juros:" type="number">
+                            </div>
+                            <div class="resposta">Número de Períodos: <div class="r"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ## -->
+                    <!-- ## -->
+                    <div class="pergunta-container">
+                        <div id="juros-composto-conversões" class="pergunta">
+                            <h4 class="titulo">Conversões de Taxas de Juros:<small style="color: var(--card-color-question);">n = log(F/P)/log(1+i)</small></h4>
+                            <div class="inputs-container">
+                                <input id="select-sibling"placeholder="Valor presente" type="number">
+                                <div class="select-input-container">
+                                    <div class="select-div-tempo">
+                                        <p>de:</p>
+                                        <select class="select-tempo" id="tempo" name="tempo">
+                                            <option>ao dia</option>
+                                            <option>à semana</option>
+                                            <option>ao m&ecirc;s</option>
+                                            <option>ao bimestre</option>
+                                            <option>ao trimestre</option>
+                                            <option>ao semestre</option>
+                                            <option>ao ano</option>
+                                        </select>
+                                    </div>
+                                    <div class="select-div-tempo">
+                                        <p>para:</p>
+                                        <select class="select-tempo" id="tempo" name="tempo">
+                                            <option>ao dia</option>
+                                            <option>à semana</option>
+                                            <option>ao m&ecirc;s</option>
+                                            <option>ao bimestre</option>
+                                            <option>ao trimestre</option>
+                                            <option>ao semestre</option>
+                                            <option>ao ano</option>
+                                        </select>
+                                    </div>
+                                    </div>
+                                </div>
+                                
+                            <div class="resposta">Número de Períodos: <div class="r"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ## -->
+            </div>
+            <div data-content id="investimento" class="content-grid">
+
+            <!-- INVESTIMENTO #####TODAS AS PERGUNTAS SOBRE INVESTIMETNO-->
+                <!-- ## -->
+                <div class="pergunta-container">
+                    <div id="investimento-futuro"class="pergunta">
+                        <h4 class="titulo">Dinheiro no Tempo, Valor Futuro (ou Principal):</h4>
+                        <div class="inputs-container">
+                            <input placeholder="Taxa de juros:" type="number">
+                            <input placeholder="Períodos:" type="number">
+                            <input placeholder="Valor periódico:" type="number">
+                            <input placeholder="Valor presente:" type="number">
+                        </div>
+                        <div class="resposta">R: <div class="r"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ## -->
+                <!-- ## -->
+                <div class="pergunta-container">
+                    <div id="investimento-presente"class="pergunta">
+                        <h4 class="titulo">Dinheiro no Tempo, Valor Presente (ou Valor Atual):</h4>
+                        <div class="inputs-container">
+                            <input placeholder="Taxa de juros:" type="number">
+                            <input placeholder="Períodos:" type="number">
+                            <input placeholder="Valor periódico:" type="number">
+                            <input placeholder="Valor futuro:" type="number">
+                        </div>
+                        <div class="resposta">R: <div class="r"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ## -->
+                <!-- ## -->
+                <div class="pergunta-container">
+                    <div id="investimento-periodico"class="pergunta">
+                        <h4 class="titulo">Financiamentos, Valor Periódico (ou Pagamento por Período):</h4>
+                        <div class="inputs-container">
+                            <input placeholder="Taxa de juros:" type="number">
+                            <input placeholder="Períodos:" type="number">
+                            <input placeholder="Valor presente:" type="number">
+                        </div>
+                        <div class="resposta">R: <div class="r"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ## -->
+                <!-- ## -->
+                <div class="pergunta-container">
+                    <div id="investimento-periodos" class="pergunta">
+                        <h4 class="titulo">Financiamentos, Períodos (ou Número de Meses, ou Número de Anos):</h4>
+                        <div class="inputs-container">
+                            <input placeholder="Taxa de juros:" type="number">
+                            <input placeholder="Valor presente::" type="number">
+                            <input placeholder="Valor futuro::" type="number">
+                        </div>
+                        <div class="resposta">R: <div class="r"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ## -->
+                <!-- ## -->
+                <div class="pergunta-container">
+                    <div id="investimento-taxa" class="pergunta">
+                        <h4 class="titulo">Financiamentos, Taxa de Juros (ou Taxa de Rendimento):</h4>
+                        <div class="inputs-container">
+                            <input placeholder="Períodos:" type="number">
+                            <input placeholder="Valor futuro:" type="number">   
+                            <input placeholder="Valor presente::" type="number">
+                        </div>
+                        <div class="resposta">R: <div class="r"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ## -->
+            </div>
+    </main>
+    <footer>
+        <div class="alunos"></div>
+    </footer>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<template>
+    <div class="pergunta-container">
+        <div class="pergunta">
+            <h4 class="titulo">Percentual de um valor:</h4>
+            <div class="inputs-container">
+                <input placeholder="place-holder" type="number">
+                <input placeholder="place-holder" type="number">
+            </div>
+            <div class="resposta">Resposta: <div id=""></div>
+            </div>
+        </div>
+    </div>
+</template>
+
+</html>

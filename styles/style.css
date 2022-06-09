@@ -1,0 +1,109 @@
+:root {
+	--cards-bg: linear-gradient(to top, #f4f4f4, #ffff);
+	--card-color: rgb(0, 0, 0);
+	--card-color-question: rgb(95, 133, 163);
+	--tab-checked: linear-gradient(to top, #f4f4ff, #f8f8ff);
+	--tabs-bg: linear-gradient(to right, #f1f1f1, #f4f4f4);
+
+	--fundo: linear-gradient(to right, #f4f4f4, #f1f1f1);
+	--button-claro-fade: rgba(255, 255, 255, 0.3);
+	--button-claro: rgba(255, 255, 255, 0.9);
+	--button-escuro: rgba(0, 0, 0, 1);
+	--button-escuro-fade: rgba(0, 0, 0, 0.75);
+	--text-shadow: 2px 1px 0.15rem #14143377;
+	--box-shadow: 1px 3px 3rem 1px rgba(100, 98, 100, 0.18);
+	--transition-normal: all 0.5s ease 0.1s;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Corben", Georgia, Times, serif;
+}
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+	font-weight: normal;
+}
+
+body {
+	background: var(--fundo);
+	font-size: 1.4rem;
+}
+input[type="number"]::-webkit-inner-spin-button {
+	-moz-appearance: textfield;
+	appearance: textfield;
+	margin: 0;
+	-webkit-appearance: none;
+}
+input {
+	box-shadow: 0 0 5pt 0.5pt #d3d3d3;
+	width: 80%;
+	margin: 0.7rem;
+	background: transparent;
+	outline: none;
+	text-decoration: none;
+	font-size: 1rem;
+	border: none;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 200;
+	overflow: hidden;
+	color: var(--dar);
+	transition: border 0.4s ease-in, box-shadow 0.4s ease-in;
+	padding: 10px 10px 10px 5px;
+	border: solid 1px rgba(255, 255, 255, 0);
+	border-bottom: 1px solid #757575;
+}
+
+input:hover {
+	border: solid 1px #fff;
+	box-shadow: 0 0 5pt 2pt #d3d3d3;
+	color: var(--button-escuro);
+}
+
+input:focus {
+	outline: none;
+}
+
+ul {
+	list-style: none;
+}
+
+li {
+	color: var(--letter-middle);
+	text-decoration-style: none;
+}
+
+/* Aqui acaba estilos genericos */
+
+/* Calculadora Por aqui */
+
+[data-tab-selector] {
+	cursor: pointer;
+}
+
+[data-content] {
+	display: none;
+}
+
+.active[data-tab-content] {
+	display: flex;
+}
+.active {
+	display: flex;
+}
+.inactive {
+	display: none;
+}
+
+/* Perguntas lidadadas aqui */
+
+.inputs-container {
+	display: flex;
+}

@@ -1,0 +1,117 @@
+.content-grid {
+	margin: 5rem;
+	background-color: var(--fundo);
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+	justify-content: center;
+	align-content: space-around;
+	gap: clamp(1rem, 3rem, 5rem);
+}
+.pergunta-container {
+	flex-basis: 50rem;
+	background-color: var(--cards-bg);
+	padding: 1rem;
+	height: minmax(5rem, 15rem);
+	border-radius: 0.5em;
+	display: flex;
+	justify-content: space-around;
+
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.pergunta {
+	display: flex;
+	flex-direction: column;
+	color: var(--card-color);
+	flex: 1 1 200px;
+	margin: auto;
+}
+.titulo {
+	color: #104f74;
+
+	text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+	padding-bottom: 0.3rem;
+	margin-bottom: 0.9rem;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.315);
+}
+
+.resposta {
+	padding: 0.55rem;
+	width: 100%;
+	font-size: small;
+	border-radius: 0.9rem;
+	border-style: solid;
+	border-width: 0px 1px 2px 1px;
+	border-color: rgba(0, 0, 0, 0.1);
+	background-color: rgba(73, 72, 72, 0.1);
+}
+
+.inputs-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+.inputs-container > input {
+	flex-basis: 13rem;
+}
+.select-input-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+.select-div-tempo {
+	margin: auto;
+	display: flex;
+	min-width: 15ch;
+	max-width: 30ch;
+	border-radius: 0.25em;
+	padding: 0.25em 0.5em;
+	font-size: 1.25rem;
+	cursor: pointer;
+	line-height: 1.1;
+}
+.select-div-tempo {
+	grid-template-areas: "select";
+}
+
+.select-div-tempo,
+.select-div-tempo :after {
+	grid-area: select;
+}
+.select-div-tempo::after {
+	content: "";
+	width: 0.8em;
+	height: 0.5em;
+}
+.select-tempo {
+	appearance: none;
+	background-color: transparent;
+	border-radius: 0.5rem;
+	border: none;
+	padding-left: 22px;
+	margin: auto;
+	border: 1px solid rgba(0, 0, 0, 0);
+	border-bottom: 1px solid var(--card-color-question);
+
+	font-family: inherit;
+	font-size: inherit;
+	cursor: inherit;
+	line-height: inherit;
+	transition: border 0.3s ease-in;
+}
+.select-tempo:hover {
+	border: 1px solid var(--card-color-question);
+}
+
+.select-tempo::-ms-expand {
+	display: none;
+}
+
+/* Reposta */
+.resposta {
+	display: flex;
+	font-size: clamp(0.79rem, 1rem, 1.5rem);
+}
+.r {
+	margin-left: 0.3rem;
+
+	color: var(--card-color-question);
+}

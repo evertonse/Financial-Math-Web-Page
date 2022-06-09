@@ -1,0 +1,82 @@
+#disciplina {
+	padding: 0.3rem;
+	color: white;
+	font-size: 2rem;
+	margin: auto;
+}
+nav {
+	background: linear-gradient(
+		to right,
+		var(--button-escuro),
+		var(--button-escuro-fade)
+	);
+	display: flex;
+	align-content: space-around;
+	justify-self: center;
+	flex-wrap: wrap;
+}
+.nav-bar input[type="radio"] {
+	display: none;
+}
+input[type="radio"]:checked + label {
+	border-radius: 4rem;
+
+	--checked: rgba(0, 0, 0, 0.075);
+	background: var(--tab-checked);
+	display: block;
+}
+.tabs {
+	margin: auto;
+	min-width: 80%;
+	border-radius: 2rem;
+	background-color: var(--tabs-bg);
+	font-size: 1.8rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+
+	align-items: space-around;
+}
+
+.tab:hover {
+	border: solid 1px rgba(19, 108, 172, 0.794);
+	background: var(--button-claro);
+	color: var(--button-escuro) !important;
+}
+
+.tab {
+	width: clamp(30px, 400px, 500px);
+	margin: 0.7rem;
+	padding: 0.7rem;
+	cursor: pointer;
+	overflow: hidden;
+	border-radius: 4rem;
+	text-decoration: none;
+	font-size: 1.65rem;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 600;
+	border: solid 1px rgba(255, 255, 255, 0.739);
+	overflow: hidden;
+	background: var(--button-claro-fade);
+	color: var(--button-escuro-fade);
+	transition: all 0.2s ease-in-out;
+}
+
+.tab.active {
+	background-color: #ccc;
+}
+
+/* Ico  */
+ion-icon {
+	transition: color 0.4s ease;
+	font-size: 1.4rem;
+	margin: 0px 10px 0px 0px;
+}
+ion-icon:hover {
+	color: rgb(31, 121, 98);
+}
+#disciplina-ico {
+	transition: color 0.4s ease;
+	font-size: 2rem;
+	margin: 0px 10px 0px 0px;
+}
