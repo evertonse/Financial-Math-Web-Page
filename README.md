@@ -6,3 +6,8 @@
 
 ### Setup
 * open `index.html`
+
+### Image:
+<p align="center">
+  <img src="./images/example.BMP" width="350" title="hover text">
+</p>
